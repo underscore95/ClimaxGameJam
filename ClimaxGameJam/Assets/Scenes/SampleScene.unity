@@ -1308,6 +1308,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3560418414613954685, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560418414613954685, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4319162123536792520, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.89
@@ -1352,6 +1360,18 @@ PrefabInstance:
       propertyPath: _pool
       value: 
       objectReference: {fileID: 479241127}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _atlas
+      value: 
+      objectReference: {fileID: 100100200, guid: cc0c0faa578cbf74182459d2eb4baec0, type: 3}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _numFrames
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _numRotations
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6900342576889331195, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_Name
       value: Wizard

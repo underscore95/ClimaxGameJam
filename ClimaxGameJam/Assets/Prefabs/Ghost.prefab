@@ -120,7 +120,6 @@ MonoBehaviour:
   _speed: 10
   _damage: 1
   _rotationSpeed: 35
-  _teleportDistance: 0.8
 --- !u!114 &4015010570907705858 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7105515476283432692, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
