@@ -8,17 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 278709536132004862, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3913341766510548578, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.47324
+      value: -3.17796
       objectReference: {fileID: 0}
     - target: {fileID: 3913341766510548578, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3913341766510548578, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.92651
+      value: 2.47674
       objectReference: {fileID: 0}
     - target: {fileID: 3913341766510548578, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,12 +52,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5931810858162531204, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.722
+      objectReference: {fileID: 0}
     - target: {fileID: 5943825206270824529, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant
+      value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039912949433466197, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008974804627419998, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: _maxHealth
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5943825206270824529, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4993790245589391441}
   m_SourcePrefab: {fileID: 100100000, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+--- !u!1 &6900342576889331195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5943825206270824529, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+  m_PrefabInstance: {fileID: 990304332147912106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4993790245589391441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900342576889331195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c62bccf9ad5a1549aca49e307686e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _wizardHealth: {fileID: 7105515476283432692}
+  _pool: {fileID: 0}
+  _maxGhosts: 3
+  _minSpawnInterval: 2.5
+  _maxSpawnInterval: 4.5
+--- !u!114 &7105515476283432692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8008974804627419998, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+  m_PrefabInstance: {fileID: 990304332147912106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900342576889331195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8407adde7f02dfa44acba8ab0950d8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::EntityHealth

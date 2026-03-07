@@ -54,8 +54,6 @@ public class PlayerWeapon : MonoBehaviour
 
     private void OnHit(RaycastHit hit)
     {
-        print(name + " hit: " + hit.transform);
-
         if (hit.transform.gameObject.TryGetComponent<EntityHealth>(out var health))
         {
             health.Health -= 1;

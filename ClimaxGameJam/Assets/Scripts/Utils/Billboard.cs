@@ -1,8 +1,14 @@
+using System;
 using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    [SerializeField] private Transform _camera;
+    private Transform _camera;
+
+    private void Awake()
+    {
+        _camera = Camera.main.transform;
+    }
 
     private void Update()
     {

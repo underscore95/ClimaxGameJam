@@ -6,7 +6,6 @@ public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
     [SerializeField] private BarUI _healthBarOptional;
-    [SerializeField] private bool _destroyOnDeath;
 
     public Action OnDeath { get; set; }
 
@@ -28,10 +27,15 @@ public class EntityHealth : MonoBehaviour
         }
     }
 
+    public float MaxHealth => _maxHealth;
+
     private void Awake()
     {
         Debug.Assert(_maxHealth > 0);
+    }
+
+    private void OnEnable()
+    {
         _health = _maxHealth;
-        if (_destroyOnDeath) OnDeath += () => Destroy(gameObject);
     }
 }
