@@ -51,12 +51,9 @@ public class AnimatedSprite : MonoBehaviour
 
     private void Update()
     {
-        MakeBillboarded();
         UpdateRotation();
 
         _quad.sprite = _sprites[_numFrames * (int)_rotation + _frame];
-        
-      //  print("rotation: " + _rotation + " frame: " + _frame + " sprite: " + _quad.sprite.name);
     }
 
     private IEnumerator UpdateFrame()
@@ -79,10 +76,5 @@ public class AnimatedSprite : MonoBehaviour
         angle = (angle + 360) % 360;
 
         _rotation = Mathf.RoundToInt(angle / _anglePerRotation) % _numRotations;
-    }
-
-    private void MakeBillboarded()
-    {
-        transform.forward = Vector3.Normalize(transform.position - _camera.position);
     }
 }
