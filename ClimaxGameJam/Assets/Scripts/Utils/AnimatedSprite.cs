@@ -6,10 +6,10 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.U2D;
 
+// Animated pre-rendered sprite
 public class AnimatedSprite : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _quad;
-    [SerializeField] private Transform _camera;
     [SerializeField] private Transform _parentTransform;
     [SerializeField] private SpriteAtlas _atlas;
     [SerializeField] private int _numFrames;
@@ -20,16 +20,18 @@ public class AnimatedSprite : MonoBehaviour
     private float _secondsPerFrame;
     private int _frame;
     private float _anglePerRotation;
+    private Transform _camera;
 
     private void Awake()
     {
         Debug.Assert(_framesPerSecond > 0);
         Debug.Assert(_numRotations >= 4);
         Debug.Assert(_numRotations % 4 == 0, "Num rotations must be a multiple of 4");
+        _camera = Camera.main.transform;
         _secondsPerFrame = 1.0f / _framesPerSecond;
         _sprites = new Sprite[_atlas.spriteCount];
         _atlas.GetSprites(_sprites);
-        _anglePerRotation = 360.0f /_numRotations;
+        _anglePerRotation = 360.0f / _numRotations;
 
         // Sort numerically
         Array.Sort(_sprites, (a, b) =>
@@ -45,18 +47,15 @@ public class AnimatedSprite : MonoBehaviour
             int bNum = int.Parse(new string(b.name.Where(char.IsDigit).ToArray()));
             return aNum.CompareTo(bNum);
         });
-        
+
         StartCoroutine(UpdateFrame());
     }
 
     private void Update()
     {
-        MakeBillboarded();
         UpdateRotation();
 
         _quad.sprite = _sprites[_numFrames * (int)_rotation + _frame];
-        
-      //  print("rotation: " + _rotation + " frame: " + _frame + " sprite: " + _quad.sprite.name);
     }
 
     private IEnumerator UpdateFrame()
@@ -79,10 +78,5 @@ public class AnimatedSprite : MonoBehaviour
         angle = (angle + 360) % 360;
 
         _rotation = Mathf.RoundToInt(angle / _anglePerRotation) % _numRotations;
-    }
-
-    private void MakeBillboarded()
-    {
-        transform.forward = Vector3.Normalize(transform.position - _camera.position);
     }
 }
