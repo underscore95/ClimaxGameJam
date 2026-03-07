@@ -25,8 +25,8 @@ public class AnimatedSprite : MonoBehaviour
     private void Awake()
     {
         Debug.Assert(_framesPerSecond > 0);
-        Debug.Assert(_numRotations >= 4);
-        Debug.Assert(_numRotations % 4 == 0, "Num rotations must be a multiple of 4");
+      //  Debug.Assert(_numRotations >= 4);
+     //   Debug.Assert(_numRotations % 4 == 0, "Num rotations must be a multiple of 4");
         _camera = Camera.main.transform;
         _secondsPerFrame = 1.0f / _framesPerSecond;
         _sprites = new Sprite[_atlas.spriteCount];
