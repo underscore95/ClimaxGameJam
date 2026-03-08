@@ -40,7 +40,6 @@ public class GhostController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        print(other.gameObject);
         if (other.gameObject != _player) return;
 
         HitPlayer();

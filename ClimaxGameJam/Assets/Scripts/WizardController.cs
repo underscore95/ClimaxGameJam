@@ -31,7 +31,7 @@ public class WizardController : MonoBehaviour
 
     private void OnDestroy()
     {
-        GetComponentInParent<Room>().EnemiesAlive--;
+        if (transform.parent) transform.parent.GetComponent<Room>().EnemiesAlive--;
     }
 
     private IEnumerator StartGhostSpawner()

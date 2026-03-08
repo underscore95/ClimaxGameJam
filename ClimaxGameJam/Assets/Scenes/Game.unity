@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4993790245589391441, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _pool
+      value: 
+      objectReference: {fileID: 479241127}
     - target: {fileID: 6900342576889331195, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_Name
       value: Wizard
@@ -1205,11 +1209,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3281793744253506760, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.8
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 3281793744253506760, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 3281793744253506760, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1252,6 +1256,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
+--- !u!114 &1283455938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9041937974044748949, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
+  m_PrefabInstance: {fileID: 1179579577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28200bdbf7ef4b7d85594cb57e917b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::Room
 --- !u!4 &1347453806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6712408189172420436, guid: c1ed3995806fb3340900a329876a90bc, type: 3}
@@ -1276,6 +1291,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4468718073167406741, guid: c1ed3995806fb3340900a329876a90bc, type: 3}
+      propertyPath: _next
+      value: 
+      objectReference: {fileID: 1283455938}
     - target: {fileID: 4468718073167406741, guid: c1ed3995806fb3340900a329876a90bc, type: 3}
       propertyPath: _isStartingRoom
       value: 1
