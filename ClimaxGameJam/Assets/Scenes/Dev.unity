@@ -794,6 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::EntityHealth
   _maxHealth: 10
   _healthBarOptional: {fileID: 1733124403}
+  _secondsPerRegen: 30
+  _amountPerRegen: 1
 --- !u!1 &479241126
 GameObject:
   m_ObjectHideFlags: 0
