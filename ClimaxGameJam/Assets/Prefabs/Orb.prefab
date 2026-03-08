@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2533148569051450866, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3903214565394003549, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -728,6 +732,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6215971637900016862, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6615610055168512480, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -739,6 +747,22 @@ PrefabInstance:
     - target: {fileID: 6871053450079060721, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753524123674112596, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753524123674112596, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118321385919156461, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135461563428050056, guid: 5c3cb28c064e4ec4aa9d670e4788f4ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.157
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
