@@ -5568,7 +5568,7 @@ Transform:
   m_GameObject: {fileID: 1377726180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5681,7 +5681,7 @@ Transform:
   m_GameObject: {fileID: 1703171457}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 4.1899996, z: 5}
+  m_LocalPosition: {x: 0, y: 4.1899996, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5773,13 +5773,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721622906}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.054339103, y: -0.17026922, z: -0.033506628, w: 0.9833275}
-  m_LocalPosition: {x: -1.601, y: 6.304, z: -0.06}
+  m_LocalRotation: {x: 0.15005563, y: 0.38716787, z: -0.064021185, w: 0.90746105}
+  m_LocalPosition: {x: -2.39, y: 3.1, z: -0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 5.478, y: -19.88, z: -4.864}
+  m_LocalEulerAnglesHint: {x: 18.779, y: 46.211, z: 0}
 --- !u!114 &1721622910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10846,13 +10846,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightningAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: NoiseModule.strength.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: NoiseModule.strengthY.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: NoiseModule.strengthZ.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.275
+      objectReference: {fileID: 0}
     - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
       propertyPath: m_LocalPosition.z
