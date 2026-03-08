@@ -18,21 +18,12 @@ public class WizardController : MonoBehaviour
     private Collider _playerCollider;
     private readonly List<GhostController> _ghosts = new();
     private readonly List<Fireball> _fireballs = new();
+    private bool _dead = false;
 
     private void Awake()
     {
         _playerCollider = FindFirstObjectByType<PlayerController>().gameObject.GetComponent<Collider>();
-        _wizardHealth.OnDeath += () =>
-        {
-            StartCoroutine(_deathSound.Play(transform));
-
-            while (_ghosts.Count > 0)
-            {
-                RemoveGhost(_ghosts[0]);
-            }
-
-            Destroy(gameObject);
-        };
+        _wizardHealth.OnDeath += () => { StartCoroutine(HandleDeath()); };
 
         StartCoroutine(StartSpawnRoutine());
         Debug.Assert(GetComponentInParent<Room>());
@@ -43,9 +34,27 @@ public class WizardController : MonoBehaviour
         if (transform.parent) transform.parent.GetComponent<Room>().EnemiesAlive--;
     }
 
+    private IEnumerator HandleDeath()
+    {
+        if (_dead) yield break;
+        _dead = true;
+        StartCoroutine(_deathSound.Play(transform));
+
+        while (_ghosts.Count > 0)
+        {
+            RemoveGhost(_ghosts[0]);
+        }
+
+        _animatedSprite.Play("Die");
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
+        Destroy(gameObject);
+    }
+
     private IEnumerator StartSpawnRoutine()
     {
         yield return new WaitForSeconds(Random.Range(_minSpawnInterval, _maxSpawnInterval));
+
+        if (_dead) yield break;
 
         bool spawnGhost = Random.Range(0.0f, 1.0f) < _ghostChance;
         if (_ghosts.Count < _maxGhosts && spawnGhost)

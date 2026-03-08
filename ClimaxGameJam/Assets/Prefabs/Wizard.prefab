@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.data[0].FPS
@@ -126,6 +126,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.data[4].FPS
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: _animations.Array.data[5].FPS
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
@@ -149,6 +153,10 @@ PrefabInstance:
       value: FireCharge
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: _animations.Array.data[5].Name
+      value: Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.data[0].Atlas
       value: 
       objectReference: {fileID: 100100200, guid: 9cde0aeffc93e8044a7ca31e9ffd276e, type: 3}
@@ -168,6 +176,10 @@ PrefabInstance:
       propertyPath: _animations.Array.data[4].Atlas
       value: 
       objectReference: {fileID: 100100200, guid: 2d85df9c48889894eace64844cd63375, type: 3}
+    - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: _animations.Array.data[5].Atlas
+      value: 
+      objectReference: {fileID: 100100200, guid: 1d6c68d981e5db349b59253cb37dccbd, type: 3}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.data[0].NumFrames
       value: 2
@@ -189,6 +201,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: _animations.Array.data[5].NumFrames
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.data[0].NumRotations
       value: 1
       objectReference: {fileID: 0}
@@ -206,6 +222,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _animations.Array.data[4].NumRotations
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: _animations.Array.data[5].NumRotations
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5931810858162531204, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
