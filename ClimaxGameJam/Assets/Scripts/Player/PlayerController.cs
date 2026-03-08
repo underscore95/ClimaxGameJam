@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 _angle = Vector2.zero;
     private bool _isOnGround;
     private int _framesSinceJump = 0;
+    public bool Won { get; set; } = false;
+    public bool Dead { get; set; } = false;
 
     private void Awake()
     {
