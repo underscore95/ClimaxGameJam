@@ -13,10 +13,10 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
-        foreach (WizardController wizard in GetComponentsInChildren<WizardController>())
+        foreach (WizardController wizard in GetComponentsInChildren<WizardController>(true))
         {
             EnemiesAlive++;
-            wizard.enabled = false;
+            wizard.gameObject.SetActive(false);
         }
 
         foreach (Transform child in transform)
@@ -43,9 +43,10 @@ public class Room : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        foreach (WizardController wizard in GetComponentsInChildren<WizardController>())
+        if (_hasStarted) return;
+        foreach (WizardController wizard in GetComponentsInChildren<WizardController>(true))
         {
-            wizard.enabled = true;
+            wizard.gameObject.SetActive(true);
         }
 
         _hasStarted = true;

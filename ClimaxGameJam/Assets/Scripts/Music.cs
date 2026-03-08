@@ -19,7 +19,9 @@ public class Music : MonoBehaviour
 
     void Update()
     {
-        if (!_source.isPlaying && _tracks.Length > 0)
+        if (_source.clip == null) return;
+
+        if (_source.time >= _source.clip.length)
         {
             _index++;
             if (_index >= _tracks.Length) _index = 0;
@@ -30,6 +32,7 @@ public class Music : MonoBehaviour
     void Play(int i)
     {
         _source.clip = _tracks[i];
+        _source.time = 0f;
         _source.Play();
     }
 }
