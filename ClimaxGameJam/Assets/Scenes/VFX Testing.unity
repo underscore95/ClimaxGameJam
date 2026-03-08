@@ -10834,6 +10834,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 771dbd7ca3be41a41bdb09c310474ef1, type: 3}
+--- !u!1001 &2146855004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1837839123768213800, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_Name
+      value: LightningAttack (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.6843987
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000024723818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5233417
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
 --- !u!1001 &1538175791354456397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10845,26 +10902,6 @@ PrefabInstance:
     - target: {fileID: 1837839123768213800, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
       propertyPath: m_Name
       value: LightningAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
-      propertyPath: NoiseModule.strength.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
-      propertyPath: NoiseModule.strength.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
-      propertyPath: NoiseModule.strengthY.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
-      propertyPath: NoiseModule.strengthZ.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2114881120634622919, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.275
       objectReference: {fileID: 0}
     - target: {fileID: 5627429332300066406, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11042,3 +11079,4 @@ SceneRoots:
   - {fileID: 1945566108}
   - {fileID: 828556317}
   - {fileID: 1538175791354456397}
+  - {fileID: 2146855004}
