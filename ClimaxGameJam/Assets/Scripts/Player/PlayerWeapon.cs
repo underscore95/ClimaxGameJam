@@ -19,6 +19,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private float _sphereRadius = 1;
     [SerializeField] private BarUI _cooldownOptional;
     [SerializeField] private float _cooldownSeconds = 1;
+    [SerializeField] private GameObject _vfxPrefab;
     private float _secondsSinceShoot = 0;
 
     private void Awake()
@@ -38,6 +39,9 @@ public class PlayerWeapon : MonoBehaviour
         if (_secondsSinceShoot < _cooldownSeconds) return;
         if (!_shootInput.action.WasCompletedThisFrame()) return;
         _secondsSinceShoot = 0;
+        Transform vfx = Instantiate(_vfxPrefab).transform;
+        vfx.position = _camera.transform.position;
+        vfx.forward = _camera.transform.forward;
 
         if (_raycastType == RaycastType.Ray)
         {
