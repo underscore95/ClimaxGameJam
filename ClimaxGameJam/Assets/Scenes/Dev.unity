@@ -1196,6 +1196,10 @@ MonoBehaviour:
   _vfxPrefab: {fileID: 8657245731022402569, guid: a03153097d6098f4abf888ca096d1de1, type: 3}
   _animationController: {fileID: 270482858}
   _animation: Shoot
+  _sound:
+    _clip: {fileID: 8300000, guid: ed92eb9d4116a934e80467c7d6417895, type: 3}
+    _minPitch: 0.8
+    _maxPitch: 1.2
 --- !u!1001 &717115350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2389,6 +2393,10 @@ MonoBehaviour:
   _vfxPrefab: {fileID: 1837839123768213800, guid: d14608e5617176b4696da76b8477b2d0, type: 3}
   _animationController: {fileID: 270482858}
   _animation: Magic
+  _sound:
+    _clip: {fileID: 8300000, guid: c40e9ee3d76497645b873ca8216aedd7, type: 3}
+    _minPitch: 0.8
+    _maxPitch: 1.2
 --- !u!1 &2026370580
 GameObject:
   m_ObjectHideFlags: 0
