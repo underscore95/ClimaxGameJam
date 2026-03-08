@@ -10,6 +10,8 @@ public class GhostController : MonoBehaviour
     [SerializeField] private float _damage = 1;
     [SerializeField] private float _rotationSpeed = 90;
     [SerializeField] private AnimatedSprite _animatedSprite;
+    [SerializeField] private GameSound _dieSound;
+    [SerializeField] private GameSound _spawnSound;
     private GameObject _player;
     private EntityHealth _playerHealth;
     private bool _hit;
@@ -20,7 +22,11 @@ public class GhostController : MonoBehaviour
     {
         _player = FindFirstObjectByType<PlayerController>().gameObject;
         _playerHealth = _player.GetComponent<EntityHealth>();
-        _ghostHealth.OnDeath += () => { StartCoroutine(HandleDeath()); };
+        _ghostHealth.OnDeath += () =>
+        {
+            StartCoroutine(HandleDeath());
+            StartCoroutine(_dieSound.Play(transform));
+        };
     }
 
     private void OnEnable()
@@ -29,6 +35,7 @@ public class GhostController : MonoBehaviour
         _hit = false;
         _dead = false;
         PlaySpawnAnimation();
+        StartCoroutine(_spawnSound.Play(transform));
     }
 
     private void FixedUpdate()

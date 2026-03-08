@@ -225,6 +225,16 @@ MonoBehaviour:
   _damage: 2
   _rotationSpeed: 35
   _animatedSprite: {fileID: 2139220745003916179}
+  _dieSound:
+    _clips:
+    - {fileID: 8300000, guid: a7d8e8830747f1341a4cc14b241f68fb, type: 3}
+    _minPitch: 0.8
+    _maxPitch: 1.2
+  _spawnSound:
+    _clips:
+    - {fileID: 8300000, guid: 3277e7067c528484f88796fed6f580aa, type: 3}
+    _minPitch: 0.8
+    _maxPitch: 1.2
 --- !u!114 &2139220745003916179 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
