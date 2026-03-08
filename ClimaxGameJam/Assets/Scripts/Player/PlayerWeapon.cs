@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +21,10 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private BarUI _cooldownOptional;
     [SerializeField] private float _cooldownSeconds = 1;
     [SerializeField] private GameObject _vfxPrefab;
+    [SerializeField] private PlayerAnimationController _animationController;
+    [SerializeField] private string _animation;
     private float _secondsSinceShoot = 0;
+    private bool _animationPlaying = false;
 
     private void Awake()
     {
@@ -42,6 +46,8 @@ public class PlayerWeapon : MonoBehaviour
         Transform vfx = Instantiate(_vfxPrefab).transform;
         vfx.position = _camera.transform.position;
         vfx.forward = _camera.transform.forward;
+
+        StartCoroutine(_animationController.Play(_animation));
 
         if (_raycastType == RaycastType.Ray)
         {

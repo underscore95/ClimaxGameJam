@@ -23,10 +23,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private EntityHealth _playerHealth;
     [SerializeField] private float _deathFadeTime = 1;
     [SerializeField] private float _deathDisplayTime = 2.5f;
+    [SerializeField] private PlayerAnimationController _animationController;
     private bool _isOnGround;
     private int _framesSinceJump = 0;
     public bool Won { get; set; } = false;
     public bool Dead { get; private set; } = false;
+    private bool _animationPlaying = false;
 
     private void Awake()
     {
@@ -40,6 +42,8 @@ public class PlayerController : MonoBehaviour
             if (Won || Dead) return;
             StartCoroutine(HandleDeath());
         };
+
+        _playerHealth.OnHurt += () => { StartCoroutine(_animationController.Play("Hurt")); };
     }
 
     private IEnumerator HandleDeath()

@@ -11,6 +11,7 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] private int _amountPerRegen = 0;
 
     public Action OnDeath { get; set; }
+    public Action OnHurt { get; set; }
 
     private float _health;
     private Coroutine _regenCoroutine;
@@ -20,13 +21,15 @@ public class EntityHealth : MonoBehaviour
         get => _health;
         set
         {
+            bool damaged = value < _health;
             _health = Mathf.Clamp(value, 0, _maxHealth);
             if (_healthBarOptional)
             {
                 _healthBarOptional.SetProgress(_health / _maxHealth);
             }
 
-            if (_health <= 0) OnDeath.Invoke();
+            if (damaged && OnHurt != null) OnHurt.Invoke();
+            if (_health <= 0 && OnDeath != null) OnDeath.Invoke();
         }
     }
 
