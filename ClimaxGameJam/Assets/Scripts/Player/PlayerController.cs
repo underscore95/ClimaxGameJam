@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _sensitivity = 100.0f;
     [SerializeField] private float _jumpVelocity = 100.0f;
     [SerializeField] private Rigidbody _rigidBody;
-    private Vector2 _angle = Vector2.zero;
+    [SerializeField] private Vector2 _angle = Vector2.zero;
     private bool _isOnGround;
     private int _framesSinceJump = 0;
 

@@ -26,6 +26,7 @@ public class WizardController : MonoBehaviour
         };
 
         StartCoroutine(StartGhostSpawner());
+        Debug.Assert(GetComponentInParent<Room>());
     }
 
     private void OnDestroy()
