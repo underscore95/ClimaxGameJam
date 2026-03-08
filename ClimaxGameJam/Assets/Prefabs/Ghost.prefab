@@ -35,18 +35,18 @@ PrefabInstance:
     - target: {fileID: 3560418414613954685, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -257973322, guid: 89dd3aa17447cbb4eb96c64c853cac74, type: 3}
+      objectReference: {fileID: -1379766032, guid: 8cd3e0c3bec7d0d49b01df8c70ba4d72, type: 3}
     - target: {fileID: 4319162123536792520, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4319162123536792520, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4319162123536792520, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4319162123536792520, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4319162123536792520, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4501825266083792355, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -107,6 +111,54 @@ PrefabInstance:
     - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: _numRotations
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _defaultAnimation
+      value: Summon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[2].FPS
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[0].Name
+      value: Summon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[1].Name
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[2].Name
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[0].Atlas
+      value: 
+      objectReference: {fileID: 100100200, guid: 2ae6a46186e29d449a008bf627a77e76, type: 3}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[1].Atlas
+      value: 
+      objectReference: {fileID: 100100200, guid: cfe779b05d8a0fd4d9bab67da4a0e107, type: 3}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[2].Atlas
+      value: 
+      objectReference: {fileID: 100100200, guid: 265995612cbeca945b699b480bc0aa0e, type: 3}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[0].NumFrames
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[1].NumFrames
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _animations.Array.data[2].NumFrames
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5597132551212806785, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_Layer
@@ -168,6 +220,18 @@ MonoBehaviour:
   _speed: 10
   _damage: 2
   _rotationSpeed: 35
+  _animatedSprite: {fileID: 2139220745003916179}
+--- !u!114 &2139220745003916179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5229800208326764389, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+  m_PrefabInstance: {fileID: 6135013724644080886}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96b3b464e4c409b8b21cf46768f1271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatedSprite
 --- !u!114 &4015010570907705858 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7105515476283432692, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}

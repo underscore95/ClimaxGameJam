@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game::Fireball
   _rigidbody: {fileID: 582531504176658903}
   _velocity: 10
+  _damage: 1
 --- !u!54 &582531504176658903
 Rigidbody:
   m_ObjectHideFlags: 0

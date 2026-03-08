@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class GhostController : MonoBehaviour
@@ -8,28 +9,26 @@ public class GhostController : MonoBehaviour
     [SerializeField] private float _speed = 10;
     [SerializeField] private float _damage = 1;
     [SerializeField] private float _rotationSpeed = 90;
+    [SerializeField] private AnimatedSprite _animatedSprite;
     private GameObject _player;
     private EntityHealth _playerHealth;
     private bool _hit;
+    private bool _dead;
     public WizardController Wizard { get; internal set; }
 
     private void Awake()
     {
         _player = FindFirstObjectByType<PlayerController>().gameObject;
         _playerHealth = _player.GetComponent<EntityHealth>();
-        _ghostHealth.OnDeath += () =>
-        {
-            if (Wizard)
-            {
-                Wizard.RemoveGhost(this);
-            }
-        };
+        _ghostHealth.OnDeath += () => { StartCoroutine(HandleDeath()); };
     }
 
     private void OnEnable()
     {
         transform.forward = Vector3.Normalize(transform.position - _player.transform.position);
         _hit = false;
+        _dead = false;
+        PlaySpawnAnimation();
     }
 
     private void FixedUpdate()
@@ -38,11 +37,16 @@ public class GhostController : MonoBehaviour
         HandleRotation();
     }
 
+    private void PlaySpawnAnimation()
+    {
+        _animatedSprite.Play("Summon");
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject != _player) return;
 
-        HitPlayer();
+        StartCoroutine(HitPlayer());
     }
 
     private void HandleRotation()
@@ -61,11 +65,32 @@ public class GhostController : MonoBehaviour
         _rigidBody.linearVelocity = dir * _speed;
     }
 
-    private void HitPlayer()
+    private IEnumerator HitPlayer()
     {
-        if (_hit) return;
+        if (_hit || _dead) yield break;
         _hit = true;
+
+        _animatedSprite.Play("Attack");
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
         _playerHealth.Health -= _damage;
-        _ghostHealth.Health = 0;
+        RemoveGhost();
+    }
+
+    private IEnumerator HandleDeath()
+    {
+        if (_hit || _dead) yield break;
+        _dead = true;
+
+        _animatedSprite.Play("Death");
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
+        RemoveGhost();
+    }
+
+    private void RemoveGhost()
+    {
+        if (Wizard)
+        {
+            Wizard.RemoveGhost(this);
+        }
     }
 }

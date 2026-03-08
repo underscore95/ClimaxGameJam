@@ -10,10 +10,10 @@ public class WizardController : MonoBehaviour
     [SerializeField] private ObjectPoolMonoBehaviour _ghostPool;
     [SerializeField] private ObjectPoolMonoBehaviour _fireballPool;
     [SerializeField] private int _maxGhosts = 3;
-    [SerializeField] private float _minSpawnIntervalGhosts = 2.5f;
-    [SerializeField] private float _maxSpawnIntervalGhosts = 4.5f;
-    [SerializeField] private float _minSpawnIntervalFireballs = 1.5f;
-    [SerializeField] private float _maxSpawnIntervalFireballs = 3.5f;
+    [SerializeField] private float _minSpawnInterval = 1.75f;
+    [SerializeField] private float _maxSpawnInterval = 2.5f;
+    [SerializeField] private float _ghostChance = 0.5f;
+    [SerializeField] private AnimatedSprite _animatedSprite;
     private Collider _playerCollider;
     private readonly List<GhostController> _ghosts = new();
     private readonly List<Fireball> _fireballs = new();
@@ -31,8 +31,7 @@ public class WizardController : MonoBehaviour
             Destroy(gameObject);
         };
 
-        StartCoroutine(StartGhostSpawner());
-        StartCoroutine(StartFireballSpawner());
+        StartCoroutine(StartSpawnRoutine());
         Debug.Assert(GetComponentInParent<Room>());
     }
 
@@ -41,20 +40,31 @@ public class WizardController : MonoBehaviour
         if (transform.parent) transform.parent.GetComponent<Room>().EnemiesAlive--;
     }
 
-    private IEnumerator StartGhostSpawner()
+    private IEnumerator StartSpawnRoutine()
     {
-        yield return new WaitForSeconds(Random.Range(_minSpawnIntervalGhosts, _maxSpawnIntervalGhosts));
-        if (_ghosts.Count < _maxGhosts)
+        yield return new WaitForSeconds(Random.Range(_minSpawnInterval, _maxSpawnInterval));
+
+        bool spawnGhost = Random.Range(0.0f, 1.0f) < _ghostChance;
+        if (_ghosts.Count < _maxGhosts && spawnGhost)
         {
-            SpawnGhost();
+            yield return SpawnGhost();
+        }
+        else
+        {
+            yield return SpawnFireball();
         }
 
-        StartCoroutine(StartGhostSpawner());
+        _animatedSprite.PlayDefaultAnimation();
+        StartCoroutine(StartSpawnRoutine());
     }
 
-    private IEnumerator StartFireballSpawner()
+    private IEnumerator SpawnFireball()
     {
-        yield return new WaitForSeconds(Random.Range(_minSpawnIntervalFireballs, _maxSpawnIntervalFireballs));
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
+        _animatedSprite.Play("FireCharge");
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
+        _animatedSprite.Play("FireThrow");
+
         _fireballPool.Pool.ActivateObject(obj =>
         {
             Fireball fireball = obj.GetComponent<Fireball>();
@@ -64,11 +74,16 @@ public class WizardController : MonoBehaviour
             _fireballs.Add(fireball);
         });
 
-        StartCoroutine(StartFireballSpawner());
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
     }
 
-    private void SpawnGhost()
+    private IEnumerator SpawnGhost()
     {
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
+        _animatedSprite.Play("SummonGhost");
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
+        _animatedSprite.Play("SpawnGhost");
+
         Vector3 position = transform.position + transform.forward * 0.75f;
 
         Debug.Assert(_ghostPool);
@@ -76,13 +91,15 @@ public class WizardController : MonoBehaviour
         _ghostPool.Pool.ActivateObject(obj =>
         {
             Debug.Assert(obj);
-            obj.transform.position = position;
+            obj.transform.position = position + Vector3.down * 0.05f;
 
             GhostController ghost = obj.GetComponent<GhostController>();
             ghost.Wizard = this;
 
             _ghosts.Add(ghost);
         });
+
+        yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
     }
 
     internal void RemoveGhost(GhostController ghostController)
