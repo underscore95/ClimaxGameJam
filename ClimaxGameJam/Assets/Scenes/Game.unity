@@ -1400,7 +1400,7 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  _maxDistance: 5
+  _maxDistance: 7
   _raycastType: 1
   _sphereRadius: 1
 --- !u!1 &2026370580

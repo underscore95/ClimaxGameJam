@@ -9,7 +9,7 @@ public class PlayerWeapon : MonoBehaviour
         Ray,
         Sphere
     }
-
+    
     [SerializeField] private InputActionReference _shootInput;
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _enemyLayer;
@@ -33,7 +33,7 @@ public class PlayerWeapon : MonoBehaviour
                     _camera.transform.forward,
                     out var hit,
                     _maxDistance,
-                    _enemyLayer))
+                    ~(1<<gameObject.layer) ))
             {
                 OnHit(hit);
             }
@@ -45,7 +45,7 @@ public class PlayerWeapon : MonoBehaviour
                     _sphereRadius,
                     out var hit,
                     _maxDistance,
-                    _enemyLayer))
+                    ~(1<<gameObject.layer) ))
             {
                 OnHit(hit);
             }
@@ -54,6 +54,11 @@ public class PlayerWeapon : MonoBehaviour
 
     private void OnHit(RaycastHit hit)
     {
+        if (((1 << hit.transform.gameObject.layer) & _enemyLayer.value) == 0)
+        {
+            return; // not correct layer
+        }
+        
         if (hit.transform.gameObject.TryGetComponent<EntityHealth>(out var health))
         {
             health.Health -= 1;
