@@ -26,8 +26,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3240059179496675637}
   - {fileID: 9135461563428050056}
@@ -322,7 +322,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5152,7 +5152,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.07164471, g: 0.160635, b: 0.4339623, a: 1}
+      maxColor: {r: 0.077830195, g: 0.18223768, b: 0.5, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5216,7 +5216,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 1.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10110,7 +10110,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14744,7 +14744,7 @@ Transform:
   m_GameObject: {fileID: 6871053450079060721}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.029, z: -0}
+  m_LocalPosition: {x: 0, y: 0.23, z: -0}
   m_LocalScale: {x: 0.26374483, y: 0.26374483, z: 0.26374483}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15004,7 +15004,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.87
+      scalar: 5.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15057,7 +15057,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.08
+      scalar: 8.48
       minScalar: 1
       maxCurve:
         serializedVersion: 2
