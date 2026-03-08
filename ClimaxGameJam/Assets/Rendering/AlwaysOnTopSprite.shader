@@ -8,7 +8,10 @@ Shader "Custom/AlwaysOnTopSprite"
 
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Overlay" "RenderPipeline"="UniversalPipeline" }
+        Tags
+        {
+            "RenderType"="Transparent" "Queue"="Overlay" "RenderPipeline"="UniversalPipeline"
+        }
 
         Pass
         {
@@ -18,7 +21,6 @@ Shader "Custom/AlwaysOnTopSprite"
             Blend SrcAlpha OneMinusSrcAlpha
 
             HLSLPROGRAM
-
             #pragma vertex vert
             #pragma fragment frag
 
@@ -54,10 +56,9 @@ Shader "Custom/AlwaysOnTopSprite"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _BaseColor;
+                half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, float2(1.0 - IN.uv.x, IN.uv.y)) * _BaseColor;
                 return color;
             }
-
             ENDHLSL
         }
     }
