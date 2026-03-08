@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,7 @@ public class Orb : MonoBehaviour
     [SerializeField] private float _interactDistance = 15f;
     [SerializeField] private CanvasGroup _winCanvas;
     [SerializeField] private Canvas _interactCanvas;
+    [SerializeField] private TMP_Text _timerText;
     private PlayerController _player;
     private Camera _camera;
 
@@ -49,6 +51,7 @@ public class Orb : MonoBehaviour
     private IEnumerator Win()
     {
         _player.Won = true;
+        _timerText.text = _timerText.text.Replace("00:00", FindFirstObjectByType<TimerUI>().GetTimeText());
 
         yield return CanvasUtils.FadeIn(_winCanvas, _fadeTime);
 
