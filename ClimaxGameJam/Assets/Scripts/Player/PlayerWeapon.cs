@@ -17,16 +17,27 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private float _maxDistance = 50.0f;
     [SerializeField] private RaycastType _raycastType;
     [SerializeField] private float _sphereRadius = 1;
+    [SerializeField] private BarUI _cooldownOptional;
+    [SerializeField] private float _cooldownSeconds = 1;
+    private float _secondsSinceShoot = 0;
 
     private void Awake()
     {
         _shootInput.action.Enable();
         _ignoreLayers.value |= 1 << gameObject.layer;
+        _secondsSinceShoot = _cooldownSeconds;
     }
 
     private void Update()
     {
+        _secondsSinceShoot += Time.deltaTime;
+        if (_cooldownOptional)
+            _cooldownOptional.SetProgress(Mathf.Min(_cooldownSeconds == 0 ? 1 : _secondsSinceShoot / _cooldownSeconds,
+                1));
+
+        if (_secondsSinceShoot < _cooldownSeconds) return;
         if (!_shootInput.action.WasCompletedThisFrame()) return;
+        _secondsSinceShoot = 0;
 
         if (_raycastType == RaycastType.Ray)
         {
