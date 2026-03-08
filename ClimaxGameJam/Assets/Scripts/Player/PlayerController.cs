@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,10 +19,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _jumpVelocity = 100.0f;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Vector2 _angle = Vector2.zero;
+    [SerializeField] private CanvasGroup _deathScreen;
+    [SerializeField] private EntityHealth _playerHealth;
+    [SerializeField] private float _deathFadeTime = 1;
+    [SerializeField] private float _deathDisplayTime = 2.5f;
     private bool _isOnGround;
     private int _framesSinceJump = 0;
     public bool Won { get; set; } = false;
-    public bool Dead { get; set; } = false;
+    public bool Dead { get; private set; } = false;
 
     private void Awake()
     {
@@ -29,10 +35,31 @@ public class PlayerController : MonoBehaviour
         _jumpInput.action.Enable();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        _playerHealth.OnDeath += () =>
+        {
+            if (Won || Dead) return;
+            StartCoroutine(HandleDeath());
+        };
+    }
+
+    private IEnumerator HandleDeath()
+    {
+        Dead = true;
+
+        yield return CanvasUtils.FadeIn(_deathScreen, _deathFadeTime);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        yield return GameObjectUtils.DestroyAllExcept(gameObject, _deathScreen.gameObject);
+
+        yield return new WaitForSeconds(_deathDisplayTime);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
     private void Update()
     {
+        if (Dead || Won) return;
         CheckOnGround();
         HandleLook();
         HandleJump();

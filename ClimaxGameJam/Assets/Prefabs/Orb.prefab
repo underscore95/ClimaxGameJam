@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _interactInput: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _fadeTime: 1
-  _displayTime: 5
+  _displayTime: 2.5
   _interactDistance: 15
   _winCanvas: {fileID: 8684637918499065963}
   _interactCanvas: {fileID: 8772053336284549146}
