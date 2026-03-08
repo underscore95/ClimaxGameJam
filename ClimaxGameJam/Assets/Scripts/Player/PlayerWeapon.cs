@@ -13,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private InputActionReference _shootInput;
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private LayerMask _ignoreLayers;
     [SerializeField] private float _maxDistance = 50.0f;
     [SerializeField] private RaycastType _raycastType;
     [SerializeField] private float _sphereRadius = 1;
@@ -20,6 +21,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Awake()
     {
         _shootInput.action.Enable();
+        _ignoreLayers.value |= 1 << gameObject.layer;
     }
 
     private void Update()
@@ -33,7 +35,8 @@ public class PlayerWeapon : MonoBehaviour
                     _camera.transform.forward,
                     out var hit,
                     _maxDistance,
-                    _enemyLayer))
+                    ~_ignoreLayers.value
+                ))
             {
                 OnHit(hit);
             }
@@ -45,15 +48,22 @@ public class PlayerWeapon : MonoBehaviour
                     _sphereRadius,
                     out var hit,
                     _maxDistance,
-                    _enemyLayer))
+                    ~_ignoreLayers.value
+                ))
             {
                 OnHit(hit);
             }
-        } else Debug.Assert(false);
+        }
+        else Debug.Assert(false);
     }
 
     private void OnHit(RaycastHit hit)
     {
+        if (((1 << hit.transform.gameObject.layer) & _enemyLayer.value) == 0)
+        {
+            return; // not correct layer
+        }
+
         if (hit.transform.gameObject.TryGetComponent<EntityHealth>(out var health))
         {
             health.Health -= 1;

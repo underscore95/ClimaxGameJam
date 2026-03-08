@@ -23,7 +23,6 @@ public class EntityHealth : MonoBehaviour
             }
 
             if (_health <= 0) OnDeath.Invoke();
-            print("Damaged: " + _health + " / " + _maxHealth);
         }
     }
 
