@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +13,8 @@ public class WizardController : MonoBehaviour
     [SerializeField] private float _maxSpawnInterval = 2.5f;
     [SerializeField] private float _ghostChance = 0.5f;
     [SerializeField] private AnimatedSprite _animatedSprite;
+    [SerializeField] private GameSound _deathSound;
+    [SerializeField] private GameSound _fireballSound;
     private Collider _playerCollider;
     private readonly List<GhostController> _ghosts = new();
     private readonly List<Fireball> _fireballs = new();
@@ -23,6 +24,8 @@ public class WizardController : MonoBehaviour
         _playerCollider = FindFirstObjectByType<PlayerController>().gameObject.GetComponent<Collider>();
         _wizardHealth.OnDeath += () =>
         {
+            StartCoroutine(_deathSound.Play(transform));
+
             while (_ghosts.Count > 0)
             {
                 RemoveGhost(_ghosts[0]);
@@ -60,6 +63,7 @@ public class WizardController : MonoBehaviour
 
     private IEnumerator SpawnFireball()
     {
+        StartCoroutine(_fireballSound.Play(transform));
         yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());
         _animatedSprite.Play("FireCharge");
         yield return new WaitForSeconds(_animatedSprite.SecondsUntilLoop());

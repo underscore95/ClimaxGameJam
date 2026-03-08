@@ -23,6 +23,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObject _vfxPrefab;
     [SerializeField] private PlayerAnimationController _animationController;
     [SerializeField] private string _animation;
+    [SerializeField] private GameSound _sound;
     private float _secondsSinceShoot = 0;
     private bool _animationPlaying = false;
 
@@ -48,6 +49,7 @@ public class PlayerWeapon : MonoBehaviour
         vfx.forward = _camera.transform.forward;
 
         StartCoroutine(_animationController.Play(_animation));
+        StartCoroutine(_sound.Play(transform));
 
         if (_raycastType == RaycastType.Ray)
         {

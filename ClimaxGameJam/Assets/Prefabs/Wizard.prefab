@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 950251516, guid: 779d9a8e225c3e242a688a943c28414e, type: 3}
+    - target: {fileID: 4384079570453130711, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4984850505632074447, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
       propertyPath: _atlas
       value: 
@@ -268,6 +272,16 @@ MonoBehaviour:
   _maxSpawnInterval: 2.5
   _ghostChance: 0.5
   _animatedSprite: {fileID: 5229800208326764389}
+  _deathSound:
+    _clips:
+    - {fileID: 8300000, guid: a74b97de54055ab48bb7de652a91a8cb, type: 3}
+    _minPitch: 0.8
+    _maxPitch: 1.2
+  _fireballSound:
+    _clips:
+    - {fileID: 8300000, guid: 5c206e25d3638ac47989c00a3e8375e6, type: 3}
+    _minPitch: 0.8
+    _maxPitch: 1.2
 --- !u!114 &7105515476283432692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8008974804627419998, guid: ddd41fad711b069489d33b042f4e0875, type: 3}
