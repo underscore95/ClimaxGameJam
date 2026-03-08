@@ -357,6 +357,14 @@ PrefabInstance:
       propertyPath: _pool
       value: 
       objectReference: {fileID: 479241127}
+    - target: {fileID: 4993790245589391441, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _ghostPool
+      value: 
+      objectReference: {fileID: 479241127}
+    - target: {fileID: 4993790245589391441, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
+      propertyPath: _fireballPool
+      value: 
+      objectReference: {fileID: 1184892631}
     - target: {fileID: 6900342576889331195, guid: e891b5503c1fee94db2034e1f414ff55, type: 3}
       propertyPath: m_Name
       value: Wizard
@@ -879,6 +887,9 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  _ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 1
   _maxDistance: 50
   _raycastType: 0
   _sphereRadius: 1
@@ -1256,6 +1267,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
+--- !u!1 &1184892630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1184892632}
+  - component: {fileID: 1184892631}
+  m_Layer: 0
+  m_Name: FireballPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1184892631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184892630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11c4b7ded0b402eb18e6e1f5070ab32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::ObjectPoolMonoBehaviour
+  _prefab: {fileID: 8508567566989286015, guid: abfa579b9cacfa4449ce786f6d0506b8, type: 3}
+  _capacity: 25
+--- !u!4 &1184892632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184892630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.41075, y: 0, z: -2.23537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1283455938 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9041937974044748949, guid: ec9d9ad1e93ed434980792bf6781903c, type: 3}
@@ -1400,6 +1457,9 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  _ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 1
   _maxDistance: 7
   _raycastType: 1
   _sphereRadius: 1
@@ -1445,6 +1505,7 @@ SceneRoots:
   - {fileID: 591752540}
   - {fileID: 781133932}
   - {fileID: 479241128}
+  - {fileID: 1184892632}
   - {fileID: 249971127}
   - {fileID: 1948288054}
   - {fileID: 1179579577}
