@@ -28,6 +28,11 @@ public class WizardController : MonoBehaviour
         StartCoroutine(StartGhostSpawner());
     }
 
+    private void OnDestroy()
+    {
+        GetComponentInParent<Room>().EnemiesAlive--;
+    }
+
     private IEnumerator StartGhostSpawner()
     {
         yield return new WaitForSeconds(Random.Range(_minSpawnInterval, _maxSpawnInterval));
